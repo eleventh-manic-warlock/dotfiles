@@ -1,0 +1,4 @@
+[mode]
+normal_main = { fg = "#ffeccc", bg = "#364c8b" }
+select_main = { fg = "#ffeccc", bg = "#a61306" }
+

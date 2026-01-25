@@ -1,0 +1,24 @@
+[mgr]
+ratio = [1, 3, 4]
+show_hidden = true
+sort_by = "alphabetical"
+sort_sensitive = false
+sort_dir_first = true
+
+[preview]
+tab_size = 2
+image_delay = 50
+
+[open]
+rules = [
+  { url = "*.png", use = [ "open" ] },
+]
+
+[opener]
+edit = [
+  { run = '${EDITOR:=nvim} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+]
+
+open = [
+  { run = 'nsxiv "$@"', desc = "nsxiv", for = "unix" }
+]

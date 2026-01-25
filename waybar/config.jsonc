@@ -1,0 +1,20 @@
+// -*- mode: jsonc -*-
+{
+    "position": "top",
+    "height": 40, 
+    "reload_style_on_change": true,
+    "spacing": 5,
+    "include": ["~/.config/waybar/modules.json"],
+    "modules-left": [
+        "group/utils",
+        "group/workspaces"
+    ],
+    "modules-center": [
+        "group/window"
+    ],
+    "modules-right": [
+        "group/brightvol",
+        "group/cpuram",
+        "group/system"
+    ],
+}

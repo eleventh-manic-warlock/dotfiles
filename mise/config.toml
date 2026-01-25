@@ -1,0 +1,9 @@
+[tools]
+
+ruby = "latest"
+
+
+[settings]
+
+not_found_auto_install = true # see MISE_NOT_FOUND_AUTO_INSTALL
+ruby.default_packages_file = "~/.config/mise/ruby/.default-gems"

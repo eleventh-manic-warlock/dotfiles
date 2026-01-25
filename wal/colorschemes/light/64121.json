@@ -1,0 +1,28 @@
+{
+  "wallpaper": "~/.config/hypr/wallpapers/64121.jpg",
+  "special": {
+    "foreground": "#60420e",
+    "background": "#ffeccc",
+    "cursor": "#c8aa76"
+  },
+  "colors": {
+    "color0": "#d1ad70",
+    "color8": "#906f37",
+    "color1": "#a61306",
+    "color9": "#e33324",
+    "color2": "#036bb6",
+    "color10": "#67b1e6",
+    "color3": "#aa1848",
+    "color11": "#d27090",
+    "color4": "#364c8b",
+    "color12": "#1347db",
+    "color5": "#cf9f00",
+    "color13": "#ffc811",
+    "color6": "#8c8c8c",
+    "color14": "#000000",
+    "color7": "#c8aa76",
+    "color15": "#c59c53",
+    "color16": "#FFA066",
+    "color17": "#FF5D62"
+  }
+}
