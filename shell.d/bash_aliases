@@ -1,5 +1,0 @@
-###########
-# Aliases #
-###########
-
-alias lsa='ls -AFhl --color=auto --group-directories-first'

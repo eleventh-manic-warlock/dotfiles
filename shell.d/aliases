@@ -1,0 +1,10 @@
+###########
+# Aliases #
+###########
+
+# Pre-existing aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# Custom aliases
+alias lsa='ls -AFhl --color=auto --group-directories-first'
