@@ -40,7 +40,17 @@ safe_set histappend              # Append to hist ory file instead of overwrite
 safe_set cmdhist                 # Multi-line commands are one entry
 PROMPT_COMMAND='history -a'      # Save history before prompting
 export HISTSIZE=10000                     # Keep a long history per session
+export HISTFILE=~/.histfile               # File to save history to
 export HISTFILESIZE=100000                # Keep a longer history in the history file
 export HISTCONTROL="ignoreboth:erasedups" # Ignore commands starting with space or duplicate commands
 export HISTIGNORE="history:clear"         # List of commands to exclude from history
 
+
+#=========#
+#   ENV   #
+#=========#
+
+# set nmtui colorscheme
+if [ -f ~/.config/nmtui/colors ]; then
+  export NEWT_COLORS_FILE=~/.config/nmtui/colors
+fi
