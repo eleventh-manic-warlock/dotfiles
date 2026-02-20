@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# Default to dark mode
+MODE="-d"
+
+# Parse flags, silence getopts errors with ":"
+while getopts ":ld" opt; do
+  case ${opt} in
+    l ) MODE="-l" ;; # Light mode
+    d ) MODE="-d" ;; # Dark mode
+    /? ) echo "Usage: set-theme [-l|-d] [path/to/image | theme_name]"; exit 1 ;;
+  esac
+done
+shift $((OPTIND -1))
+
+INPUT=$1
+
+if [ -z "$INPUT" ]; then
+  echo "Error: No wallpaper or theme provided."
+  echo "Usage: set-theme [-l|-d] [path/to/image | theme_name]";
+  exit 1
+fi
+
+# Apply named theme or generate new from given image
+if [ -f "$INPUT" ]; then
+  wal -q "$MODE" -i "$INPUT"
+else
+  wal -q --theme "$INPUT"
+fi
+
+# Helper method to sync templates from .cache to .config
+sync_template() {
+  _src="$HOME/.cache/wal/$1"
+  _dest="$2"
+
+  if [ -f "$_src" ]; then
+    mkdir -p "$(dirname "$_dest")"
+    cp "$_src" "$_dest"
+  else
+    echo "Warning: Template $_src not found. Is your template in ~/.config/wal/templates/?"
+  fi
+}
+
+sync_template "colors-mako" "$HOME/.config/mako/colors-mako"
+
+# Safe mako reload
+if pgrep -x mako > /dev/null; then
+  makoctl reload
+else
+  mako &
+fi
