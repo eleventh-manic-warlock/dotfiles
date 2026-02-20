@@ -1,0 +1,7 @@
+background-color={color7}
+text-color={foreground}
+border-color={background}
+
+[urgency=high]
+text-color={color1}
+border-color={color1}
