@@ -22,6 +22,29 @@ vim.api.nvim_create_autocmd("LspAttach", {
     keymap.set("n", "<C-k>", lsp.buf.signature_help, bufopts)       -- Show signature help
     keymap.set("n", "<space>e", vim.diagnostic.open_float, bufopts) -- Show help in hover window
     keymap.set("n", "<space>rn", lsp.buf.rename, bufopts)           -- Rename symbol
+    keymap.set({"n", "v"}, "<space>f", function()
+      local mode = vim.api.nvim_get_mode().mode
+
+      if vim.startswith(string.lower(mode), "v") then
+        require("conform").format({ lsp_fallback = true, async = true, timeout_ms = 1000 }, function(err)
+          if not err then
+            if vim.startswith(string.lower(mode), "v") then
+              vim.api.nvim_feedkeys(
+                vim.api.nvim_replace_termcodes("<Esc>", true, false, true),
+                "n",
+                false
+              )
+            end
+          end
+        end)
+      else
+        require("conform").format({
+          lsp_fallback = true,
+          async = true,
+          timeout_ms = 1000,
+        })
+      end
+    end, bufopts)
   end,
 })
 
