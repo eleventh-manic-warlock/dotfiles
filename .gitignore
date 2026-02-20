@@ -1,0 +1,11 @@
+clipse/clipboard_history.json
+clipse/clipse.log
+GIMP/*
+dconf/
+discord/
+go/
+htop/
+mozilla/
+pulse/
+systemd/
+trashrc
