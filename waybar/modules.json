@@ -96,6 +96,20 @@
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
     },
+    "custom/backlight-sunset": {
+      "interval": 2,
+      "signal": 1,
+      "return-type": "json",    
+      "exec": "/bin/sh $HOME/.config/waybar/scripts/sunset-toggle.sh",
+      "format": "{icon}",
+      "format-icons": {
+        "normal": [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+        "sunset": [ " " ],
+      },
+      "on-click": "pgrep -x hyprsunset > /dev/null && pkill hyprsunset || hyprsunset --temperature 5200 & sleep 0.1; pkill -RTMIN+1 waybar",
+      "on-scroll-up": "brightnessctl -e3 -n2 set 5%+; pkill -RTMIN+1 waybar",
+      "on-scroll-down": "brightnessctl -e3 -n2 set 5%-; pkill -RTMIN+1 waybar",
+    },
     "battery": {
         "states": {
             "warning": 30,
@@ -118,7 +132,7 @@
         "orientation": "inherit",
         "modules": [
             "custom/openbracket",
-            "backlight",
+            "custom/backlight-sunset",
             "custom/split",
             "wireplumber",
             "custom/closebracket",
