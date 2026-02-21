@@ -25,7 +25,7 @@ button {
 }
 
 #custom-split {
-  margin: 0 5px 0
+  margin: 0 5px 0;
 }
 
 window#waybar {
@@ -113,6 +113,12 @@ window#waybar.empty #window {
     padding: 0 5px;
 }
 
+#custom-backlight-sunset {
+    padding: 0 5px 0 2px;
+    margin: 0;
+    min-width: 8px;
+}
+
 #clock,
 #battery,
 #cpu,
@@ -128,6 +134,7 @@ window#waybar.empty #window {
 #memory:hover,
 #network:hover,
 #backlight:hover,
+#custom-backlight-sunset:hover,
 #wireplumber:hover {
     color: @color2;
 }
